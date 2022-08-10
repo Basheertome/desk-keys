@@ -30,11 +30,11 @@ keys_out = [
 	[Keycode.GUI, Keycode.SHIFT, Keycode.E]] # Toggle Camera
 
 keys_in = [
-	DigitalInOut(board.GP1),
-	DigitalInOut(board.GP2),
-	DigitalInOut(board.GP3),
+	DigitalInOut(board.GP7),
+	DigitalInOut(board.GP6),
+	DigitalInOut(board.GP5),
 	DigitalInOut(board.GP4),
-	DigitalInOut(board.GP5)]
+	DigitalInOut(board.GP3)]
 for key in keys_in:
 	key.pull = Pull.UP
 keys = [
@@ -56,16 +56,16 @@ colors = [
 	color.GREEN]
 
 # ----- NeoPixel setup ----- #
-pixels = neopixel.NeoPixel(board.GP0, 5, brightness=0.15)
+pixels = neopixel.NeoPixel(board.GP8, 5, brightness=0.15)
 pixels.fill(color.BLACK)
 
 # ----- Rotary encoder setup ----- #
-encoder_button = DigitalInOut(board.GP6)
+encoder_button = DigitalInOut(board.GP2)
 encoder_button.direction = Direction.INPUT
 encoder_button.pull = Pull.UP
 encoder_button_last = encoder_button.value
 
-encoder = rotaryio.IncrementalEncoder(board.GP7, board.GP8)
+encoder = rotaryio.IncrementalEncoder(board.GP1, board.GP0)
 encoder_last = 0
 
 # ----- Main loop ----- #
