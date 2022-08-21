@@ -23,11 +23,11 @@ cc = ConsumerControl(usb_hid.devices)
 
 #  ----- Key setup -----  #
 keys_out = [
-	[Keycode.GUI, Keycode.OPTION, Keycode.POWER], # Lock computer
 	ConsumerControlCode.PLAY_PAUSE, # Play / Pause
+	[Keycode.GUI, Keycode.OPTION, Keycode.POWER], # Lock computer
 	[Keycode.GUI, Keycode.CONTROL, Keycode.OPTION, Keycode.SHIFT, Keycode.D], # Toggle Do Not Disturb
-	[Keycode.GUI, Keycode.SHIFT, Keycode.D], # Toggle Mic
-	[Keycode.GUI, Keycode.SHIFT, Keycode.E]] # Toggle Camera
+	[Keycode.GUI, Keycode.SHIFT, Keycode.E], # Toggle Camera
+	[Keycode.GUI, Keycode.SHIFT, Keycode.D]] # Toggle Mic
 
 keys_in = [
 	DigitalInOut(board.GP7),
@@ -52,8 +52,8 @@ colors = [
 	color.WHITE,
 	color.AQUA,
 	color.PURPLE,
-	color.RED,
-	color.GREEN]
+	color.GREEN,
+	color.RED]
 
 # ----- NeoPixel setup ----- #
 pixels = neopixel.NeoPixel(board.GP8, 5, brightness=0.15)
