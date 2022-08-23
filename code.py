@@ -98,7 +98,15 @@ while True:
 	# Encoder Turn Subloop
 	encoder_position = encoder.position
 	if encoder_position > encoder_last:
+		keyboard.press(Keycode.SHIFT) # Make increment smaller
+		keyboard.press(Keycode.OPTION) # Make increment smaller
 		cc.send(ConsumerControlCode.VOLUME_INCREMENT) # Increase Volume
+		keyboard.release(Keycode.SHIFT) # Make increment smaller
+		keyboard.release(Keycode.OPTION) # Make increment smaller
 	elif encoder_position < encoder_last:
+		keyboard.press(Keycode.SHIFT) # Make increment smaller
+		keyboard.press(Keycode.OPTION) # Make increment smaller
 		cc.send(ConsumerControlCode.VOLUME_DECREMENT) # Decrease Volume
+		keyboard.release(Keycode.SHIFT) # Make increment smaller
+		keyboard.release(Keycode.OPTION) # Make increment smaller
 	encoder_last = encoder_position
