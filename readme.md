@@ -1,7 +1,7 @@
 DeskKeys
 =========
 
-The code for my under-desk macro pad that:
+CircuitPython code for my under-desk macro pad that:
 * locks the computer
 * toggles do-not-disturb
 * toggles the camera
